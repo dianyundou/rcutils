@@ -48,7 +48,7 @@
 #  warning no monotonic clock function available
 # endif  // !defined(_POSIX_TIMERS) || !_POSIX_TIMERS
 #endif  // !defined(__MACH__) && !defined(__APPLE__)
-
+int clock_gettime( int clock_id, struct timespec * tp );
 static inline bool would_be_negative(const struct timespec * const now)
 {
   return now->tv_sec < 0 || (now->tv_nsec < 0 && now->tv_sec == 0);
